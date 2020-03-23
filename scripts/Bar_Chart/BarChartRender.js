@@ -77,12 +77,12 @@ export const showBarChart = () => {
                 xAxes: [{
                     gridLines: {
                         color: "rgba(0, 0, 0, 0)",
-                    }
+                    },
                 }],
                 yAxes: [{
                     gridLines: {
                         color: "rgba(0, 0, 0, 0)",
-                    }   
+                    },
                 }],
                 yAxes: [{
                     ticks: {
