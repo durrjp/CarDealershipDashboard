@@ -18,24 +18,39 @@ export const showBarChart = () => {
         }
     });
 
-    // declaring variable for array of Sales People
-    const salesPeople = Object.keys(salesPeepsandProfits)
-    // declaring variable for array of profits
-    const profits = Object.values(salesPeepsandProfits)
-    console.log(profits)
+
+    // creating ordered array of salesmen from highest to lowest sales
+    let ordered = []
+    for (const salesmen in salesPeepsandProfits) {
+        ordered.push([salesmen,salesPeepsandProfits[salesmen]])
+    }
+    ordered.sort(function(a,b) {
+        return b[1] - a[1]
+    })
+
+    // creating the array of Sales People from the ordered array created before
+    const salesPeopleArray = []
+    ordered.forEach(person => {
+        salesPeopleArray.push(person[0])
+    }); 
+    
+    // creating the array of profits from the ordered array created before
+    const profits = []
+    ordered.forEach(person => {
+        profits.push(person[1])
+    });
 
 
     //create an array of background colors
     const backgroundColorArray = []
-    console.log(backgroundColorArray)
 
     profits.forEach(number => {
         if (number >= 1500) {
-            backgroundColorArray.push("rgb(58, 204, 58, .5)")
+            backgroundColorArray.push("rgb(58, 204, 58, .7)")
         } else if (number >= 500 && number < 1500) {
-            backgroundColorArray.push("rgb(255, 255, 0, .5)")
+            backgroundColorArray.push("rgb(255, 255, 0, .7)")
         } else if (number < 500) {
-            backgroundColorArray.push("rgb(255, 0, 0, .5)")
+            backgroundColorArray.push("rgb(255, 0, 0, .7)")
         }
     })
 
@@ -44,7 +59,7 @@ export const showBarChart = () => {
     const myBarChart = new Chart(target, {
         type: 'bar',
         data: {
-            labels: salesPeople,
+            labels: salesPeopleArray,
             datasets: [{
                 label: "Total Sales",
                 barPercentage: 0.5,
@@ -56,8 +71,33 @@ export const showBarChart = () => {
                 data: profits
             }]
         },
-        options: {}
-    });
+        // remove grid lines from bar graph
+        options: {
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        color: "rgba(0, 0, 0, 0)",
+                    }
+                }],
+                yAxes: [{
+                    gridLines: {
+                        color: "rgba(0, 0, 0, 0)",
+                    }   
+                }],
+                yAxes: [{
+                    ticks: {
+                        // Include a dollar sign in the ticks
+                        callback: function(value, index, values) {
+                            return '$' + value;
+                        }
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            },
+        }}
+    );
 }
 
 
