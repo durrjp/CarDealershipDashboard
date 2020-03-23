@@ -1,4 +1,4 @@
-import { useSalesData } from "../Bar_Chart/barDataProvider.js";
+import { useSalesData } from "../data/DataProvider.js";
 
 
 export const showPieChart = () => {
@@ -39,7 +39,9 @@ export const showPieChart = () => {
         "November": 11,
         "December": 12
       };
+      //return an array of key-value pair arrays
     const forOrdered = Object.entries(monthlyProfitsObject)
+      //order the array of key-value pairs based on object monthNames (Jan-Dec)
     const ordered = forOrdered.sort(function(a,b) {
         return monthNames[a[0]] - monthNames[b[0]];
     })
@@ -53,7 +55,7 @@ export const showPieChart = () => {
     // declaring variable for array of profits
     const profits = []
     ordered.forEach(month => {
-        profits.push(month[1])
+        profits.push(Math.floor(month[1]))
     });
 
     //create an array of background colors
