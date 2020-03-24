@@ -107,8 +107,8 @@ export const showLineChart = () => {
                 }],
                 yAxes: [{
                     ticks: {
-                        suggestedMin: 0,
-                        suggestedMax: 10
+                        suggestedMin: 1,
+                        suggestedMax: 11
                     },
                     scaleLabel: {
                         display: true,

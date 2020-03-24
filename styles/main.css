@@ -14,7 +14,7 @@
 }
 
 .leftContainer {
-    width: 50vw;
+    width: 52vw;
     height: 50%;
     margin: 1.5em;
     box-shadow: 0px 0px 2px 2px rgb(190, 185, 185);
@@ -28,7 +28,7 @@
     padding: 1em;
 }
 .bottomContainer {
-    width: 60vw;
+    width: 50vw;
     box-shadow: 0px 0px 2px 2px rgb(190, 185, 185);
     margin: 1.5em;
     padding: 1em;
