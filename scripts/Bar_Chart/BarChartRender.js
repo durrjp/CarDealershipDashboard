@@ -44,6 +44,7 @@ export const showBarChart = () => {
     //create an array of background colors
     const backgroundColorArray = []
 
+    //incorporate switch function
     profits.forEach(number => {
         if (number >= 1500) {
             backgroundColorArray.push("rgb(58, 204, 58, .7)")
@@ -78,20 +79,30 @@ export const showBarChart = () => {
                     gridLines: {
                         color: "rgba(0, 0, 0, 0)",
                     },
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Sales People",
+                        fontsize: 2,
+                        padding: 4
+                    }
                 }],
                 yAxes: [{
                     gridLines: {
                         color: "rgba(0, 0, 0, 0)",
                     },
-                }],
-                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Profit",
+                        fontsize: 2,
+                        padding: 4
+                    },
                     ticks: {
                         // Include a dollar sign in the ticks
                         callback: function(value, index, values) {
                             return '$' + value;
                         }
                     }
-                }]
+                }],
             },
             legend: {
                 display: false
