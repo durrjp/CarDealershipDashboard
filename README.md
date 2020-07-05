@@ -3,7 +3,7 @@ This app is a project created in order to display a set of mock sales data for a
 ## Running the App Locally
 
 1. Clone repo to your machine
-2. if you do not have json serve installed you will need to install it using the command: 
+2. If you do not have json serve installed you will need to install it using the command: 
 ``` bash
 npm install -g json-server
 ```
