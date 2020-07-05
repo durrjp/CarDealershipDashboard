@@ -7,7 +7,7 @@ This app is a project created in order to display a set of mock sales data for a
 ``` bash
 npm install -g json-server
 ```
-3. In one terminal CD to api directory in car-dealership-dashboard and run JSON server to port 8088 using command: 
+3. In one terminal CD to api directory in car-dealership-dashboard and run JSON server to port 3000 using command: 
 ``` bash 
 json-server -p 3000 -w data.json
 ```
